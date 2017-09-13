@@ -1,0 +1,131 @@
+<html>
+
+<head>
+	<title>Polo Ticker</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/hmac-sha512.js"></script>
+	<script type="text/javascript" src="js/popup.js"></script>
+	<script type="text/javascript" src="js/funcs.js"></script>
+	<script type="text/javascript" src="js/datatables.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+	<div id="container">
+		<ul class="nav nav-pills">
+			<li class="active"><a data-toggle="pill" href="#markets">Markets</a></li>
+			<li><a data-toggle="pill" href="#deposits_withdraws">Deposits Withdrawals</a></li>
+			<li><a data-toggle="pill" href="#open_orders">My Open Orders</a></li>
+			<li><a data-toggle="pill" href="#settings">Settings</a></li>
+			<li><a data-toggle="pill" href="#donate">Donate</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="markets" class="tab-pane fade in active">
+				<h3>Markets</h3>
+				<div class="btn_filters btn-group pull-right">
+					<button class="btn btn-xs btn-primary-green" data-filter="BTC_">BTC</button>
+					<button class="btn btn-xs btn-primary-green" data-filter="ETH_">ETH</button>
+					<button class="btn btn-xs btn-primary-green" data-filter="XMR_">XMR</button>
+					<button class="btn btn-xs btn-primary-green" data-filter="USDT_">USDT</button>
+				</div>
+				<br clear="all" />
+				<table class="table table-striped datatable" id="markets-table">
+					<thead>
+						<tr>
+							<th>Coin</th>
+							<th>Price</th>
+							<th>Volume</th>
+							<th>Change</th>
+							<th>My BTC Value</th>
+							<th>$</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</div>
+			<div id="deposits_withdraws" class="tab-pane fade">
+				<h3>Deposits & Withdrawls</h3>
+				<h4 class="text-center">Estimated value of holdings: $<span class="usd_val"></span> USD / <span class="btc_qtd"></span> BTC</h4>
+				<table class="table table-striped datatable" id="balances-table">
+					<thead>
+						<tr>
+							<th>Coin</th>
+							<th>Total Balance</th>
+							<th>BTC Value</th>
+							<th>BTC Price</th>
+							<th>On Orders</th>
+							<th>Available</th>
+							<th>$</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</div>
+			<div id="open_orders" class="tab-pane fade">
+				<h3>Your Open Orders</h3>
+				<table class="table table-striped datatable" id="open-orders-table">
+					<thead>
+						<tr>
+							<th>Coin</th>
+							<th>Type</th>
+							<th>Price (BTC)</th>
+							<th>Amount (BTC)</th>
+							<th>Total (BTC)</th>
+							<th>Date</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</div>
+
+			<div id="donate" class="tab-pane fade">
+				<div class="panelDonate">
+					<h3 class="text-center">Feel free to help the developers of this project! Donate bitcoins:</h3>
+
+					<h3 class="text-center"><b>Wallet: 1LMhw3NKGzwheTBnPEHs7dHcdEMkEsNs1G</b></h3>
+				</div>
+			</div>
+
+			<div id="settings" class="tab-pane fade">
+				<form class="form-horizontal col-xs-offset-3 col-xs-6" id="formApi">
+					<fieldset>
+						<!-- Form Name -->
+						<legend>Settings</legend>
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="apiKey">API Key</label>
+							<div class="col-md-4">
+								<input id="apiKey" name="apiKey" type="text" placeholder="" class="form-control input-md" required="">
+
+							</div>
+						</div>
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="apiSecret">API Secret</label>
+							<div class="col-md-4">
+								<input id="apiSecret" name="apiSecret" type="password" placeholder="" class="form-control input-md" required="">
+
+							</div>
+						</div>
+						You can create your access key by clicking <a href="https://poloniex.com/apiKeys" target="blank">here</a>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
